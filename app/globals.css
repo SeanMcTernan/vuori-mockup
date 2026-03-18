@@ -698,11 +698,6 @@ footer {
   color: #991b1b;
 }
 
-.comparison-banner--nextimage {
-  background: #eff6ff;
-  color: #1e40af;
-}
-
 .comparison-link {
   font-weight: 600;
   text-decoration: underline;
@@ -766,34 +761,9 @@ footer {
   white-space: nowrap;
 }
 
-/* --- Next/Image badge (nextimage page) --- */
-.nextimage-badge {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(30, 64, 175, 0.92);
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 8px;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  pointer-events: none;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.nextimage-size {
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-
 /* Smaller badges for small image containers */
 .category-img-wrap .savings-badge,
-.category-img-wrap .legacy-badge,
-.category-img-wrap .nextimage-badge {
+.category-img-wrap .legacy-badge {
   bottom: 6px;
   right: 6px;
   padding: 4px 8px;
@@ -801,8 +771,7 @@ footer {
 }
 
 .category-img-wrap .savings-percent,
-.category-img-wrap .legacy-size,
-.category-img-wrap .nextimage-size {
+.category-img-wrap .legacy-size {
   font-size: 11px;
 }
 
@@ -811,8 +780,7 @@ footer {
 }
 
 .product-img-wrap .savings-badge,
-.product-img-wrap .legacy-badge,
-.product-img-wrap .nextimage-badge {
+.product-img-wrap .legacy-badge {
   bottom: 8px;
   right: 8px;
 }
@@ -827,8 +795,7 @@ footer {
   }
 
   .savings-badge,
-  .legacy-badge,
-  .nextimage-badge {
+  .legacy-badge {
     bottom: 6px;
     right: 6px;
     padding: 4px 8px;
@@ -836,8 +803,7 @@ footer {
   }
 
   .savings-percent,
-  .legacy-size,
-  .nextimage-size {
+  .legacy-size {
     font-size: 11px;
   }
 

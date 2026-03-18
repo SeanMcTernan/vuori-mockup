@@ -47,7 +47,6 @@ export default function Home() {
 
       <div className="comparison-banner comparison-banner--optimized">
         <span>Netlify Image CDN — images auto-converted to AVIF and served at the right size.</span>
-        <a href="/nextimage" className="comparison-link">View Next/Image Version →</a>
         <a href="/legacy" className="comparison-link">View Legacy Version →</a>
       </div>
 

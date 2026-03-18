@@ -48,7 +48,6 @@ export default function LegacyHome() {
       <div className="comparison-banner comparison-banner--legacy">
         <span>Legacy — raw unoptimized images fetched directly from BrandFolder.</span>
         <a href="/" className="comparison-link">View Netlify CDN Version →</a>
-        <a href="/nextimage" className="comparison-link">View Next/Image Version →</a>
       </div>
 
       <header>
