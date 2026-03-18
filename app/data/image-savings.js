@@ -1,5 +1,5 @@
 export const GITHUB_RAW_BASE =
-  'https://raw.githubusercontent.com/SeanMcTernan/vuori-mockup/main/public/images';
+  'https://raw.githubusercontent.com/SeanMcTernan/vuori-mockup/main/images';
 
 export const imageSavings = {
   // Hero images (served at viewport width, PNG → AVIF)
