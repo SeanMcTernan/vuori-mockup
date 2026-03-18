@@ -45,9 +45,9 @@ export default function NetlifyImage({
   }
 
   const targetWidths = [480, 768, 1024, 1280, 1536, 1920];
-  const fallbackSrc = buildImageUrl({ src, width: 1536, fit, quality, format });
+  const fallbackSrc = buildImageUrl({ src, width: 1536, quality, format });
   const srcSet = targetWidths
-    .map((targetWidth) => `${buildImageUrl({ src, width: targetWidth, fit, quality, format })} ${targetWidth}w`)
+    .map((targetWidth) => `${buildImageUrl({ src, width: targetWidth, quality, format })} ${targetWidth}w`)
     .join(', ');
 
   return (
