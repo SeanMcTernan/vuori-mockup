@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Athletic Clothing &amp; Activewear Apparel for Performance – Vuori</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "AktivGrotesk", "Helvetica Neue", Arial, sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      font-weight: 400;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ── TOP BANNER ── */
+    .top-banner {
+      background: #f5f4f0;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      padding: 9px 16px;
+      font-weight: 400;
+    }
+
+    /* ── HEADER / NAV ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid #e8e8e4;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      height: 60px;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .logo img {
+      height: 28px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #1a1a1a;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .nav-links a:hover { border-color: #1a1a1a; }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-icon {
+      width: 22px;
+      height: 22px;
+      stroke: #1a1a1a;
+      fill: none;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero img.desktop { display: block; width: 100%; }
+    .hero img.mobile  { display: none; width: 100%; }
+
+    .hero-overlay {
+      position: absolute;
+      bottom: 10%;
+      left: 6%;
+      max-width: 420px;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(36px, 4vw, 60px);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .hero-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.6;
+      margin-bottom: 22px;
+      max-width: 320px;
+    }
+
+    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 12px 26px;
+      background: #fff;
+      color: #1a1a1a;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .btn-primary:hover { background: #1a1a1a; color: #fff; }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 12px 26px;
+      border: 1.5px solid #fff;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .btn-outline:hover { background: #fff; color: #1a1a1a; }
+
+    /* ── SUB-HERO GRID ── */
+    .sub-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .sub-hero-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sub-hero-item img { width: 100%; height: 100%; object-fit: cover; }
+
+    .sub-hero-overlay {
+      position: absolute;
+      bottom: 8%;
+      left: 7%;
+    }
+
+    .sub-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .sub-title {
+      font-size: clamp(22px, 2.4vw, 36px);
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .btn-dark {
+      display: inline-block;
+      padding: 11px 22px;
+      background: #1a1a1a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      transition: background 0.15s;
+    }
+
+    .btn-dark:hover { background: #333; }
+
+    /* ── BLISSBLEND FEATURE ── */
+    .blissblend {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blissblend img.desktop { display: block; width: 100%; }
+    .blissblend img.mobile  { display: none; width: 100%; }
+
+    .blissblend-overlay {
+      position: absolute;
+      top: 50%;
+      right: 6%;
+      transform: translateY(-50%);
+      max-width: 380px;
+      text-align: right;
+    }
+
+    .blissblend-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+    }
+
+    .blissblend-title {
+      font-size: clamp(26px, 3vw, 44px);
+      font-weight: 300;
+      color: #1a1a1a;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .blissblend-desc {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* ── CATEGORY TABS SECTION ── */
+    .categories-section {
+      padding: 56px 32px;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.01em;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid #e0e0e0;
+      margin-bottom: 32px;
+    }
+
+    .tab-btn {
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: #888;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .tab-btn.active {
+      color: #1a1a1a;
+      border-color: #1a1a1a;
+    }
+
+    .tab-btn:hover { color: #1a1a1a; }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 16px;
+    }
+
+    .category-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .category-img-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1.15;
+      overflow: hidden;
+      background: #f5f5f3;
+    }
+
+    .category-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .category-card:hover .category-img-wrap img { transform: scale(1.04); }
+
+    .category-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-align: center;
+      color: #1a1a1a;
+    }
+
+    /* ── NEW ARRIVALS ── */
+    .arrivals-section {
+      padding: 0 32px 60px;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .arrivals-section .section-header { margin-bottom: 28px; }
+
+    .view-all {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+      padding-bottom: 2px;
+      transition: opacity 0.15s;
+    }
+
+    .view-all:hover { opacity: 0.6; }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    .product-card { display: flex; flex-direction: column; gap: 10px; }
+
+    .product-img-wrap {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: #f2f2f0;
+    }
+
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-img-wrap img { transform: scale(1.04); }
+
+    .product-info { padding: 0 2px; }
+
+    .product-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .product-price {
+      font-size: 13px;
+      font-weight: 400;
+      color: #555;
+    }
+
+    /* ── FOOTER HERO ── */
+    .footer-hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-hero img.desktop { display: block; width: 100%; }
+    .footer-hero img.mobile  { display: none; width: 100%; }
+
+    .footer-hero-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      max-width: 560px;
+      width: 90%;
+    }
+
+    .footer-hero-title {
+      font-size: clamp(28px, 3.5vw, 52px);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .btn-row-center { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── SITE FOOTER ── */
+    footer {
+      background: #f5f4f0;
+      padding: 52px 32px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .footer-brand .logo { margin-bottom: 18px; }
+    .footer-brand .logo img { height: 24px; }
+
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #555;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .footer-col ul li a {
+      font-size: 13px;
+      color: #555;
+      transition: color 0.15s;
+    }
+
+    .footer-col ul li a:hover { color: #1a1a1a; }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 24px;
+      font-size: 12px;
+      color: #888;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-social { display: flex; gap: 18px; }
+
+    .footer-social a {
+      font-size: 12px;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .footer-social a:hover { color: #1a1a1a; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .product-grid { grid-template-columns: repeat(4, 1fr); }
+      .category-grid { grid-template-columns: repeat(5, 1fr); gap: 12px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .header-inner { padding: 0 16px; }
+      .nav-links { display: none; }
+
+      .hero img.desktop  { display: none; }
+      .hero img.mobile   { display: block; }
+      .hero-overlay { bottom: 8%; left: 5%; max-width: 85%; }
+
+      .sub-hero { grid-template-columns: 1fr; }
+      .sub-hero-item img { height: 440px; }
+
+      .blissblend img.desktop { display: none; }
+      .blissblend img.mobile  { display: block; }
+      .blissblend-overlay { right: auto; left: 5%; text-align: left; top: auto; bottom: 8%; transform: none; }
+
+      .categories-section, .arrivals-section { padding-left: 16px; padding-right: 16px; }
+      .category-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+      .footer-hero img.desktop { display: none; }
+      .footer-hero img.mobile  { display: block; }
+
+      footer { padding: 40px 16px 24px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+    }
+
+    @media (max-width: 480px) {
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BANNER -->
+  <div class="top-banner">
+    Free Standard Shipping Over $75 | Free Returns
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="nav-left">
+        <a class="logo" href="#">
+          <img src="images/vuori_gradient_logo.png" alt="Vuori" />
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#">New</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Explore</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="nav-right">
+        <!-- Search -->
+        <button aria-label="Search">
+          <svg class="nav-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+        </button>
+        <!-- Account -->
+        <button aria-label="Account">
+          <svg class="nav-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <!-- Cart -->
+        <button aria-label="Cart">
+          <svg class="nav-icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO: VILLA COLLECTION -->
+  <section class="hero">
+    <img class="desktop" src="images/0316_SP26_Homepage_Hero_Villa_Desktop.png" alt="Villa Collection" />
+    <img class="mobile"  src="images/0316_SP26_Homepage_Hero_Villa_Mobile.png"  alt="Villa Collection" />
+    <div class="hero-overlay">
+      <p class="hero-eyebrow">New Collection</p>
+      <h1 class="hero-title">The Villa<br>Collection</h1>
+      <p class="hero-desc">Designed for warmth, movement, and life beyond the gym.</p>
+      <div class="btn-row">
+        <a href="#" class="btn-primary">Shop Women</a>
+        <a href="#" class="btn-outline">Shop Men</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUB-HERO: META COTTON + DENIM -->
+  <section class="sub-hero">
+    <div class="sub-hero-item">
+      <img src="images/0316_SP26_Homepage_Sub_MetaCotton_Desktop.png" alt="Vuori Meta Cotton" />
+      <div class="sub-hero-overlay">
+        <p class="sub-eyebrow">New Fabric</p>
+        <h2 class="sub-title">Vuori Meta™<br>Cotton</h2>
+        <a href="#" class="btn-dark">Shop Now</a>
+      </div>
+    </div>
+    <div class="sub-hero-item">
+      <img src="images/0316_SP26_Homepage_Sub_W_Denim_Desktop.png" alt="Vuori Wideleg Jean" />
+      <div class="sub-hero-overlay">
+        <p class="sub-eyebrow">New Arrival</p>
+        <h2 class="sub-title">The Vuori<br>Wideleg Jean</h2>
+        <a href="#" class="btn-dark">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLISSBLEND FEATURE -->
+  <section class="blissblend">
+    <img class="desktop" src="images/SP26_0223_Homepage_Blissblend_Sub_Desktop.png" alt="Vuori BlissBlend" />
+    <img class="mobile"  src="images/SP26_0223_Homepage_Blissblend_Sub_Mobile.png"  alt="Vuori BlissBlend" />
+    <div class="blissblend-overlay">
+      <p class="blissblend-eyebrow">New Fabric Technology</p>
+      <h2 class="blissblend-title">Vuori<br>BlissBlend™</h2>
+      <p class="blissblend-desc">Impossibly soft. Effortlessly versatile. Designed for every day.</p>
+      <a href="#" class="btn-dark">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- POPULAR CATEGORIES -->
+  <section class="categories-section">
+    <div class="section-header">
+      <h2 class="section-title">Popular Categories</h2>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="men">Men</button>
+      <button class="tab-btn" data-tab="women">Women</button>
+    </div>
+
+    <!-- Men's Categories -->
+    <div class="tab-panel active" id="tab-men">
+      <div class="category-grid">
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-ShortSleeveTees.png" alt="Short Sleeve Tees" /></div>
+          <span class="category-label">Short Sleeve Tees</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-Shorts.png" alt="Shorts" /></div>
+          <span class="category-label">Shorts</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-Hoodies.png" alt="Hoodies" /></div>
+          <span class="category-label">Hoodies</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-Pants.png" alt="Pants" /></div>
+          <span class="category-label">Pants</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-Boardshorts.png" alt="Boardshorts" /></div>
+          <span class="category-label">Boardshorts</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-Long_Sleeves.png" alt="Long Sleeves" /></div>
+          <span class="category-label">Long Sleeves</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-Joggers.png" alt="Joggers" /></div>
+          <span class="category-label">Joggers</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-Accessories.png" alt="Accessories" /></div>
+          <span class="category-label">Accessories</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-Jackets.png" alt="Jackets" /></div>
+          <span class="category-label">Jackets</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Women's Categories -->
+    <div class="tab-panel" id="tab-women">
+      <div class="category-grid">
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-MatchingSets.png" alt="Matching Sets" /></div>
+          <span class="category-label">Matching Sets</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-Sweatshirts.png" alt="Hoodies &amp; Sweatshirts" /></div>
+          <span class="category-label">Hoodies &amp; Sweatshirts</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-Leggings_and_Tanks.png" alt="Leggings" /></div>
+          <span class="category-label">Leggings</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-Womens_Shorts.png" alt="Shorts" /></div>
+          <span class="category-label">Shorts</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-WomensSwim.png" alt="Swim" /></div>
+          <span class="category-label">Swim</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-LSTops.png" alt="Long Sleeve Tops" /></div>
+          <span class="category-label">Long Sleeve Tops</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-Dreamknit_Pants.png" alt="Joggers &amp; Sweatpants" /></div>
+          <span class="category-label">Joggers &amp; Sweatpants</span>
+        </div>
+        <div class="category-card">
+          <div class="category-img-wrap"><img src="images/SP26-PopularCategories-AXS-womens.png" alt="Accessories" /></div>
+          <span class="category-label">Accessories</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW ARRIVALS -->
+  <section class="arrivals-section">
+    <div class="section-header">
+      <h2 class="section-title">New Arrivals</h2>
+      <a href="#" class="view-all">View All</a>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/VW3015SRB_SP26_W_BOTTOMS_DETAIL_8.png" alt="Villa Short" />
+        </div>
+        <div class="product-info">
+          <p class="product-name">Villa Short</p>
+          <p class="product-price">$74</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/V302TBL_SP26_M_BOTTOMS_DETAIL_12_9dcaa480-9497-43f5-b198-be05a9f157e6.png" alt="Kore Short Lined 7&quot;" />
+        </div>
+        <div class="product-info">
+          <p class="product-name">Kore Short Lined 7"</p>
+          <p class="product-price">$78</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/SP26_LOOK069_W_AARON_FEAVER_PASADENA_00222.jpg" alt="Trestles Twill Wideleg" />
+        </div>
+        <div class="product-info">
+          <p class="product-name">Trestles Twill Wideleg</p>
+          <p class="product-price">$148</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/V188TLH_SP26_M_TOPS_FRONT_2.jpg" alt="Strato Tech Polo" />
+        </div>
+        <div class="product-info">
+          <p class="product-name">Strato Tech Polo</p>
+          <p class="product-price">$68</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/VW303REH_SP26_W_BOTTOMS_FRONT_2.png" alt="Performance Jogger" />
+        </div>
+        <div class="product-info">
+          <p class="product-name">Performance Jogger</p>
+          <p class="product-price">$110</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/SP26_D3_LOOK058_M_AARON_FEAVER_GOLDSTEIN_00502.jpg" alt="Kore Short Unlined 5&quot;" />
+        </div>
+        <div class="product-info">
+          <p class="product-name">Kore Short Unlined 5"</p>
+          <p class="product-price">$68</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/VW3176BLK_SP26_W_BOTTOMS_DETAIL_12.png" alt="Luna Piped Short" />
+        </div>
+        <div class="product-info">
+          <p class="product-name">Luna Piped Short</p>
+          <p class="product-price">$88</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/V1116TBL_SP26_M_TOPS_CREATIVE_11.jpg" alt="Sleeveless Viewpoint Muscle Tank 2.0" />
+        </div>
+        <div class="product-info">
+          <p class="product-name">Sleeveless Viewpoint Muscle Tank 2.0</p>
+          <p class="product-price">$68</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/VW1011CER_SP26_W_TOPS_FRONT_4.png" alt="Energy Tee" />
+        </div>
+        <div class="product-info">
+          <p class="product-name">Energy Tee</p>
+          <p class="product-price">$58</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/V126TLH_SP26_M_TOPS_FRONT_2.png" alt="Strato Tech Tee" />
+        </div>
+        <div class="product-info">
+          <p class="product-name">Strato Tech Tee</p>
+          <p class="product-price">$58</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER HERO -->
+  <section class="footer-hero">
+    <img class="desktop" src="images/0213_Homepage_Footer_Desktop.png" alt="A New Perspective On Performance Apparel" />
+    <img class="mobile"  src="images/0213_Homepage_Footer_Mobile.png"  alt="A New Perspective On Performance Apparel" />
+    <div class="footer-hero-overlay">
+      <h2 class="footer-hero-title">A New Perspective On<br>Performance Apparel™</h2>
+      <div class="btn-row-center">
+        <a href="#" class="btn-primary">Shop Women</a>
+        <a href="#" class="btn-outline">Shop Men</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo"><img src="images/vuori_gradient_logo.png" alt="Vuori" /></div>
+          <p>A new perspective on performance apparel. Made for a life in motion.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Our Stores</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">ACTV Club</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping &amp; Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Gift Cards</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">Men's</a></li>
+            <li><a href="#">Women's</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Vuori, Inc. All Rights Reserved.</span>
+        <div class="footer-social">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tab switching
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + tab).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
