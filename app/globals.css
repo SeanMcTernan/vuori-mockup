@@ -698,6 +698,11 @@ footer {
   color: #991b1b;
 }
 
+.comparison-banner--nextimage {
+  background: #eff6ff;
+  color: #1e40af;
+}
+
 .comparison-link {
   font-weight: 600;
   text-decoration: underline;

@@ -1,6 +1,5 @@
-import LegacyCategoryTabs from './category-tabs';
-import { getBrandfolderUrl } from '../data/image-savings';
-import { LegacyBadge } from '../components/savings-badge';
+import Image from 'next/image';
+import NextImageCategoryTabs from './category-tabs';
 
 const newArrivals = [
   { file: 'vw3015srb_sp26_w_bottoms_detail_8.png', alt: 'Villa Short', name: 'Villa Short', price: '$74' },
@@ -29,38 +28,31 @@ function ResponsiveImagePair({ desktopFile, mobileFile, alt, className }) {
   return (
     <>
       <div className={`${className} desktop-image`}>
-        <img src={getBrandfolderUrl(desktopFile)} alt={alt} />
-        <LegacyBadge file={desktopFile} />
+        <Image src={`/images/${desktopFile}`} alt={alt} fill sizes="100vw" style={{ objectFit: 'cover' }} />
       </div>
       <div className={`${className} mobile-image`}>
-        <img src={getBrandfolderUrl(mobileFile)} alt={alt} />
-        <LegacyBadge file={mobileFile} />
+        <Image src={`/images/${mobileFile}`} alt={alt} fill sizes="100vw" style={{ objectFit: 'cover' }} />
       </div>
     </>
   );
 }
 
-export default function LegacyHome() {
+export default function NextImageHome() {
   return (
     <>
       <div className="top-banner">Free Standard Shipping Over $75 | Free Returns</div>
 
-      <div className="comparison-banner comparison-banner--legacy">
-        <span>Legacy — raw unoptimized images fetched directly from BrandFolder.</span>
+      <div className="comparison-banner comparison-banner--nextimage">
+        <span>Next/Image — images optimized by the Next.js built-in Image component.</span>
         <a href="/" className="comparison-link">View Netlify CDN Version →</a>
-        <a href="/nextimage" className="comparison-link">View Next/Image Version →</a>
+        <a href="/legacy" className="comparison-link">View Legacy Version →</a>
       </div>
 
       <header>
         <div className="header-inner">
           <div className="nav-left">
-            <a className="logo" href="/legacy" aria-label="Vuori home">
-              <img
-                src={getBrandfolderUrl('vuori_gradient_logo.png')}
-                alt="Vuori"
-                width={130}
-                height={28}
-              />
+            <a className="logo" href="/nextimage" aria-label="Vuori home">
+              <Image src="/images/vuori_gradient_logo.png" alt="Vuori" width={130} height={28} priority />
             </a>
             <nav>
               <ul className="nav-links">
@@ -107,11 +99,13 @@ export default function LegacyHome() {
       <section className="sub-hero">
         <div className="sub-hero-item">
           <div className="fill-image">
-            <img
-              src={getBrandfolderUrl('0316_sp26_homepage_sub_metacotton_desktop.png')}
+            <Image
+              src="/images/0316_sp26_homepage_sub_metacotton_desktop.png"
               alt="Vuori Meta Cotton"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              style={{ objectFit: 'cover' }}
             />
-            <LegacyBadge file="0316_sp26_homepage_sub_metacotton_desktop.png" />
           </div>
           <div className="sub-hero-overlay">
             <p className="sub-eyebrow">New Fabric</p>
@@ -121,11 +115,13 @@ export default function LegacyHome() {
         </div>
         <div className="sub-hero-item">
           <div className="fill-image">
-            <img
-              src={getBrandfolderUrl('0316_sp26_homepage_sub_w_denim_desktop.png')}
+            <Image
+              src="/images/0316_sp26_homepage_sub_w_denim_desktop.png"
               alt="Vuori Wideleg Jean"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              style={{ objectFit: 'cover' }}
             />
-            <LegacyBadge file="0316_sp26_homepage_sub_w_denim_desktop.png" />
           </div>
           <div className="sub-hero-overlay">
             <p className="sub-eyebrow">New Arrival</p>
@@ -154,7 +150,7 @@ export default function LegacyHome() {
         <div className="section-header">
           <h2 className="section-title">Popular Categories</h2>
         </div>
-        <LegacyCategoryTabs />
+        <NextImageCategoryTabs />
       </section>
 
       <section className="arrivals-section">
@@ -166,12 +162,13 @@ export default function LegacyHome() {
           {newArrivals.map((product) => (
             <div className="product-card" key={product.file}>
               <div className="product-img-wrap">
-                <img
-                  src={getBrandfolderUrl(product.file)}
+                <Image
+                  src={`/images/${product.file}`}
                   alt={product.alt}
-                  loading="lazy"
+                  fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                  style={{ objectFit: 'cover' }}
                 />
-                <LegacyBadge file={product.file} />
               </div>
               <div className="product-info">
                 <p className="product-name">{product.name}</p>
@@ -203,12 +200,7 @@ export default function LegacyHome() {
           <div className="footer-top">
             <div className="footer-brand">
               <div className="logo">
-                <img
-                  src={getBrandfolderUrl('vuori_gradient_logo.png')}
-                  alt="Vuori"
-                  width={112}
-                  height={24}
-                />
+                <Image src="/images/vuori_gradient_logo.png" alt="Vuori" width={112} height={24} />
               </div>
               <p>A new perspective on performance apparel. Made for a life in motion.</p>
             </div>
