@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { GITHUB_RAW_BASE } from '../data/image-savings';
+import { getBrandfolderUrl } from '../data/image-savings';
 import { LegacyBadge } from '../components/savings-badge';
 
 const menCategories = [
@@ -34,7 +34,7 @@ function CategoryGrid({ categories }) {
         <div className="category-card" key={category.file}>
           <div className="category-img-wrap">
             <img
-              src={`${GITHUB_RAW_BASE}/${category.file}`}
+              src={getBrandfolderUrl(category.file)}
               alt={category.alt}
               loading="lazy"
             />

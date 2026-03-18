@@ -1,5 +1,5 @@
 import LegacyCategoryTabs from './category-tabs';
-import { GITHUB_RAW_BASE } from '../data/image-savings';
+import { getBrandfolderUrl } from '../data/image-savings';
 import { LegacyBadge } from '../components/savings-badge';
 
 const newArrivals = [
@@ -29,11 +29,11 @@ function ResponsiveImagePair({ desktopFile, mobileFile, alt, className }) {
   return (
     <>
       <div className={`${className} desktop-image`}>
-        <img src={`${GITHUB_RAW_BASE}/${desktopFile}`} alt={alt} />
+        <img src={getBrandfolderUrl(desktopFile)} alt={alt} />
         <LegacyBadge file={desktopFile} />
       </div>
       <div className={`${className} mobile-image`}>
-        <img src={`${GITHUB_RAW_BASE}/${mobileFile}`} alt={alt} />
+        <img src={getBrandfolderUrl(mobileFile)} alt={alt} />
         <LegacyBadge file={mobileFile} />
       </div>
     </>
@@ -46,7 +46,7 @@ export default function LegacyHome() {
       <div className="top-banner">Free Standard Shipping Over $75 | Free Returns</div>
 
       <div className="comparison-banner comparison-banner--legacy">
-        <span>Legacy — raw unoptimized images fetched directly from GitHub origin.</span>
+        <span>Legacy — raw unoptimized images fetched directly from BrandFolder.</span>
         <a href="/" className="comparison-link">View Optimized Version →</a>
       </div>
 
@@ -55,7 +55,7 @@ export default function LegacyHome() {
           <div className="nav-left">
             <a className="logo" href="/legacy" aria-label="Vuori home">
               <img
-                src={`${GITHUB_RAW_BASE}/vuori_gradient_logo.png`}
+                src={getBrandfolderUrl('vuori_gradient_logo.png')}
                 alt="Vuori"
                 width={130}
                 height={28}
@@ -107,7 +107,7 @@ export default function LegacyHome() {
         <div className="sub-hero-item">
           <div className="fill-image">
             <img
-              src={`${GITHUB_RAW_BASE}/0316_sp26_homepage_sub_metacotton_desktop.png`}
+              src={getBrandfolderUrl('0316_sp26_homepage_sub_metacotton_desktop.png')}
               alt="Vuori Meta Cotton"
             />
             <LegacyBadge file="0316_sp26_homepage_sub_metacotton_desktop.png" />
@@ -121,7 +121,7 @@ export default function LegacyHome() {
         <div className="sub-hero-item">
           <div className="fill-image">
             <img
-              src={`${GITHUB_RAW_BASE}/0316_sp26_homepage_sub_w_denim_desktop.png`}
+              src={getBrandfolderUrl('0316_sp26_homepage_sub_w_denim_desktop.png')}
               alt="Vuori Wideleg Jean"
             />
             <LegacyBadge file="0316_sp26_homepage_sub_w_denim_desktop.png" />
@@ -166,7 +166,7 @@ export default function LegacyHome() {
             <div className="product-card" key={product.file}>
               <div className="product-img-wrap">
                 <img
-                  src={`${GITHUB_RAW_BASE}/${product.file}`}
+                  src={getBrandfolderUrl(product.file)}
                   alt={product.alt}
                   loading="lazy"
                 />
@@ -203,7 +203,7 @@ export default function LegacyHome() {
             <div className="footer-brand">
               <div className="logo">
                 <img
-                  src={`${GITHUB_RAW_BASE}/vuori_gradient_logo.png`}
+                  src={getBrandfolderUrl('vuori_gradient_logo.png')}
                   alt="Vuori"
                   width={112}
                   height={24}
