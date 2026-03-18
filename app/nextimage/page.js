@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import NextImageCategoryTabs from './category-tabs';
+import { NextImageBadge } from '../components/savings-badge';
 
 const newArrivals = [
   { file: 'vw3015srb_sp26_w_bottoms_detail_8.png', alt: 'Villa Short', name: 'Villa Short', price: '$74' },
@@ -29,9 +30,11 @@ function ResponsiveImagePair({ desktopFile, mobileFile, alt, className }) {
     <>
       <div className={`${className} desktop-image`}>
         <Image src={`/images/${desktopFile}`} alt={alt} fill sizes="100vw" style={{ objectFit: 'cover' }} />
+        <NextImageBadge file={desktopFile} />
       </div>
       <div className={`${className} mobile-image`}>
         <Image src={`/images/${mobileFile}`} alt={alt} fill sizes="100vw" style={{ objectFit: 'cover' }} />
+        <NextImageBadge file={mobileFile} />
       </div>
     </>
   );
@@ -106,6 +109,7 @@ export default function NextImageHome() {
               sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: 'cover' }}
             />
+            <NextImageBadge file="0316_sp26_homepage_sub_metacotton_desktop.png" />
           </div>
           <div className="sub-hero-overlay">
             <p className="sub-eyebrow">New Fabric</p>
@@ -122,6 +126,7 @@ export default function NextImageHome() {
               sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: 'cover' }}
             />
+            <NextImageBadge file="0316_sp26_homepage_sub_w_denim_desktop.png" />
           </div>
           <div className="sub-hero-overlay">
             <p className="sub-eyebrow">New Arrival</p>
@@ -169,6 +174,7 @@ export default function NextImageHome() {
                   sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
                   style={{ objectFit: 'cover' }}
                 />
+                <NextImageBadge file={product.file} />
               </div>
               <div className="product-info">
                 <p className="product-name">{product.name}</p>

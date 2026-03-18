@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { NextImageBadge } from '../components/savings-badge';
 
 const menCategories = [
   { file: 'sp26-popularcategories-shortsleevetees.png', alt: 'Short Sleeve Tees', label: 'Short Sleeve Tees' },
@@ -39,6 +40,7 @@ function CategoryGrid({ categories }) {
               sizes="(max-width: 480px) 50vw, (max-width: 1024px) 33vw, 11vw"
               style={{ objectFit: 'cover' }}
             />
+            <NextImageBadge file={category.file} />
           </div>
           <span className="category-label">{category.label}</span>
         </div>

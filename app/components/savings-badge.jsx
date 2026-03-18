@@ -20,3 +20,13 @@ export function LegacyBadge({ file }) {
     </div>
   );
 }
+
+export function NextImageBadge({ file }) {
+  const savings = getSavings(file);
+  if (!savings) return null;
+  return (
+    <div className="nextimage-badge">
+      <span className="nextimage-size">{savings.original}</span>
+    </div>
+  );
+}
