@@ -1,0 +1,30 @@
+{
+  "name": "vuori-mockup-nextjs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vuori mockup rebuilt in Next.js with GitHub-hosted images.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeanMcTernan/vuori-mockup.git"
+  },
+  "keywords": [
+    "nextjs",
+    "netlify"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SeanMcTernan/vuori-mockup/issues"
+  },
+  "homepage": "https://github.com/SeanMcTernan/vuori-mockup#readme",
+  "dependencies": {
+    "next": "^16.2.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}
