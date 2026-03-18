@@ -617,10 +617,6 @@ footer {
     min-height: 130vw;
   }
 
-  .hero-image img {
-    object-position: 50% 50%;
-  }
-
   .hero-overlay {
     bottom: 8%;
     left: 5%;
